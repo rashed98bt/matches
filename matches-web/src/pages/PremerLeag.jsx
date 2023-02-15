@@ -16,13 +16,12 @@ function PremerLeag() {
   return (
     <>
       {/* <LeftBar /> */}
-      <RightBar />
 
       <img src={competition.emblem} alt="asdasd" className="h-[100px]" />
       {matches.map((match) => (
         <div
           key={match.id}
-          className="border p-4 my-2 rounded-md	bg-match-card text-white "
+          className="border p-4 my-2 rounded-md	 text-black bg-white "
         >
           <div className="flex justify-between ">
             <img
@@ -31,7 +30,7 @@ function PremerLeag() {
               className="h-[50px] w-[50px]"
             />
             <div className="w-1/4 flex items-center justify-around ">
-              <div>
+              <div className="text-center">
                 <h6 className="font-semibold">Home</h6>
                 <p className="font-light">{match.homeTeam.shortName}</p>
               </div>
@@ -40,7 +39,7 @@ function PremerLeag() {
               <div className="text-3xl font-bold">
                 {match.score.fullTime.home}
               </div>
-              <div className="text-xs font-light">
+              <div className="text-xs font-light text-center">
                 <div className="">Round {match.matchday}</div>
                 <div className="">{match.utcDate.slice(0, 10)}</div>
                 <div className="">{match.referees.name}</div>
@@ -59,7 +58,7 @@ function PremerLeag() {
               </div>
             </div>
             <div className="w-1/4 flex items-center justify-around ">
-              <div>
+              <div className="text-center">
                 <h3 className="font-semibold">Away</h3>
                 <p className="font-light">{match.awayTeam.shortName}</p>
               </div>
