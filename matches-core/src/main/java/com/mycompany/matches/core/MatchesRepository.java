@@ -9,7 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MatchesRepository {
-    private String url = "http://api.football-data.org/v4/competitions/PL/matches";
+    private String url = "http://api.football-data.org/v4/competitions/PL/matches/matchday=1";
     private String token = "f70da37828874c54b788f08c477bee4c";
 
     public MatchesRepository()  {
