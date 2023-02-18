@@ -1,4 +1,4 @@
-export const scoores = [
+export const players = [
   {
     count: 10,
     filters: {
