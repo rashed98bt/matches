@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import LeftBar from "../components/LeftBar";
-import RightBar from "../components/RightBar";
 import { data } from "../data/data";
 
 function PremerLeag() {
