@@ -13,8 +13,8 @@ function RightBar() {
           style={{ backgroundColor: "#340040" }}
         >
           <span className="p-2 mr-2 w-[5%]"></span>
-          <span className="mr-1 w-[2%]"></span>
-          <span className="w-[15%] text-left">Club</span>
+          <span className="mr-1 w-[20px]"></span>
+          <span className="w-[20%] text-left">Club</span>
           <span className="w-[7.5%] text-center">MP</span>
           <span className="w-[5%] text-center">W</span>
           <span className="w-[5%] text-center">D</span>
@@ -48,10 +48,10 @@ function RightBar() {
               <img
                 src={team.team.crest}
                 alt=""
-                className="h-[20px] w-[2%] mr-1"
+                className="h-[20px] w-[20px] mr-1"
               />
 
-              <span className="w-[15%] text-left">{team.team.shortName}</span>
+              <span className="w-[20%] text-left">{team.team.shortName}</span>
               <span className="w-[7.5%] text-center">{team.playedGames}</span>
               <span className="w-[5%] text-center">{team.won}</span>
               <span className="w-[5%] text-center">{team.draw}</span>
