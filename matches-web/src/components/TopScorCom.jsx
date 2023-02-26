@@ -1,9 +1,8 @@
 import React from "react";
 import { players } from "../data/scoores.js";
 
-function LeftBar() {
+function TopScorCom() {
   const playersTable = players[0].scorers;
-  console.log(playersTable);
   let counter = 1;
   return (
     <div className=" w-[35%] ">
@@ -24,7 +23,10 @@ function LeftBar() {
 
         {playersTable.map((player) => (
           <>
-            <div className="flex  pl-0  my-1 py-1  border-none items-center text-center">
+            <div
+              key={player.player.id}
+              className="flex  pl-0  my-1 py-1  border-none items-center text-center"
+            >
               <span
                 className="w-[5%] mr-1 rounded-l-lg border-none"
                 style={
@@ -50,4 +52,4 @@ function LeftBar() {
   );
 }
 
-export default LeftBar;
+export default TopScorCom;

@@ -1,24 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { data } from "../data/data";
-import StandingsCom from "../components/StandingsCom";
-import TopScorCom from "../components/TopScorCom";
-function PremerLeag() {
+function MatchesCom({ Matches }) {
   //   var [plData, setPlData] = useState({});
 
   //   useEffect(() => {
   //     setPlData();
   //     console.log(data[0]);
   //   }, [plData]);
-  const plData = data[0];
+  const plData = Matches[0];
   const competition = plData.competition;
   const matches = plData.matches;
   return (
     <>
-      {/* <LeftBar /> */}
-      <div className="flex justify-between">
-        <StandingsCom />
-        <TopScorCom />
-      </div>
       <img src={competition.emblem} alt="asdasd" className="h-[100px]" />
       {matches.map((match) => (
         <div
@@ -77,4 +68,4 @@ function PremerLeag() {
   );
 }
 
-export default PremerLeag;
+export default MatchesCom;

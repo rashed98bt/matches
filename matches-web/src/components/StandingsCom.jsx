@@ -1,7 +1,6 @@
 import React from "react";
-import { standings } from "../data/standings.js";
-function RightBar() {
-  const standing = standings[0];
+function StandingsCom({ LeagStandings }) {
+  const standing = LeagStandings[0];
   const tableTeam = standing.standings[0].table;
   return (
     <div className=" w-[60%]">
@@ -28,7 +27,10 @@ function RightBar() {
 
         {tableTeam.map((team) => (
           <>
-            <div className="flex  pl-0 rounded-lg my-1  border-none items-center">
+            <div
+              key={team.id}
+              className="flex  pl-0 rounded-lg my-1  border-none items-center"
+            >
               <span
                 className="rounded-l-lg p-1 mr-2 w-[5%] text-center"
                 style={
@@ -71,4 +73,4 @@ function RightBar() {
   );
 }
 
-export default RightBar;
+export default StandingsCom;

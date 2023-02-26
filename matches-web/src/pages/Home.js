@@ -1,7 +1,13 @@
 import React from "react";
+import MatchesCom from "../components/MatchesCom";
+import { data } from "../data/data";
 
 function Home() {
-  return <div>Home Page</div>;
+  return (
+    <>
+      <MatchesCom Matches={data} />
+    </>
+  );
 }
 
 export default Home;

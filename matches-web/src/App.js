@@ -2,8 +2,9 @@ import "./App.css";
 import PremerLeag from "./pages/PremerLeag";
 import Header from "./components/Header";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import LaLiga from "./pages/LaLiga";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/premerLeag" element={<PremerLeag />} />
+            <Route path="/Laliga" element={<LaLiga />} />
           </Routes>
         </div>
       </div>
