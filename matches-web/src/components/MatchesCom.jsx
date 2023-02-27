@@ -1,16 +1,29 @@
+import { useEffect, useState } from "react";
+
 function MatchesCom({ Matches }) {
   //   var [plData, setPlData] = useState({});
+  var [competition, setCompetition] = useState({});
+  var [matches, setMatches] = useState([]);
+  useEffect(() => {
+    const plData = Matches;
+    async function fetchData() {
+      try {
+        console.log("ssssssssss");
+        const response = Matches;
+        setCompetition(response.competition);
+        setMatches(response.matches);
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+      }
+    }
 
-  //   useEffect(() => {
-  //     setPlData();
-  //     console.log(data[0]);
-  //   }, [plData]);
-  const plData = Matches[0];
-  const competition = plData.competition;
-  const matches = plData.matches;
+    fetchData();
+  }, []);
+
   return (
-    <>
-      <img src={competition.emblem} alt="asdasd" className="h-[100px]" />
+    <div>
+      {/* <img src={competition.emblem} alt="asdasd" className="h-[100px]" />
       {matches.map((match) => (
         <div
           key={match.id}
@@ -63,8 +76,8 @@ function MatchesCom({ Matches }) {
             />
           </div>
         </div>
-      ))}
-    </>
+      ))} */}
+    </div>
   );
 }
 
