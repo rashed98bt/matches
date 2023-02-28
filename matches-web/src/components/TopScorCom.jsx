@@ -1,8 +1,10 @@
 import React from "react";
 import { players } from "../data/scoores.js";
 
-function TopScorCom() {
-  const playersTable = players[0].scorers;
+function TopScorCom({ TopScore }) {
+  console.log(TopScore);
+  const playersTable = TopScore.scorers;
+
   let counter = 1;
   return (
     <div className=" w-[35%] ">
@@ -22,30 +24,28 @@ function TopScorCom() {
         </div>
 
         {playersTable.map((player) => (
-          <>
-            <div
-              key={player.player.id}
-              className="flex  pl-0  my-1 py-1  border-none items-center text-center"
+          <div
+            key={player.player.id}
+            className="flex  pl-0  my-1 py-1  border-none items-center text-center"
+          >
+            <span
+              className="w-[5%] mr-1 rounded-l-lg border-none"
+              style={
+                counter < 4
+                  ? { backgroundColor: "#22c55e" }
+                  : {
+                      backgroundColor: "transparent",
+                    }
+              }
             >
-              <span
-                className="w-[5%] mr-1 rounded-l-lg border-none"
-                style={
-                  counter < 4
-                    ? { backgroundColor: "#22c55e" }
-                    : {
-                        backgroundColor: "transparent",
-                      }
-                }
-              >
-                {counter++}
-              </span>
-              <span className="w-[45%] text-left">{player.player.name}</span>
-              <span className="w-[12%] ">{player.team.tla}</span>
-              <span className="w-[12%] ">{player.goals}</span>
-              <span className="w-[12%] ">{player.assists}</span>
-              <span className="w-[12%] ">{player.penalties}</span>
-            </div>
-          </>
+              {counter++}
+            </span>
+            <span className="w-[45%] text-left">{player.player.name}</span>
+            <span className="w-[12%] ">{player.team.tla}</span>
+            <span className="w-[12%] ">{player.goals}</span>
+            <span className="w-[12%] ">{player.assists}</span>
+            <span className="w-[12%] ">{player.penalties}</span>
+          </div>
         ))}
       </div>
     </div>

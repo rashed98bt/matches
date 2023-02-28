@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.mycompany.matches.core.premierleague"})
+@ComponentScan(basePackages = {"com.mycompany.matches.core"})
 public class MatchesCoreApplication {
 
     public static void main(String[] args) {

@@ -10,7 +10,7 @@ function PremerLeag() {
         <StandingsCom LeagStandings={standings} />
         <TopScorCom />
       </div>
-      <MatchesCom Matches={data} />
+      {/* <MatchesCom Matches={data} /> */}
     </>
   );
 }

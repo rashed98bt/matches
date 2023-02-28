@@ -5,15 +5,12 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("x")
+@RequestMapping("plAPI")
 @CrossOrigin("*")
 public class PremierLeagueController {
     PremierLeagueRepository matcesrepository = new PremierLeagueRepository();
 
-    @GetMapping("y")
-    public String test(){
-        return "test";
-    }
+
 
     @PostMapping("/matchbyday")
     public String getPremierLeagueMatchesByRound(@RequestBody String day,@RequestHeader String auth)throws IOException {
