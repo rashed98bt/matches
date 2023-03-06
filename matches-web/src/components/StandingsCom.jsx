@@ -1,7 +1,6 @@
 import React from "react";
 function StandingsCom({ LeagStandings }) {
   const standing = LeagStandings;
-  console.log(standing);
   const tableTeam = standing.standings[0].table;
   return (
     <div className=" w-[60%]">

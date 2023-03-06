@@ -49,4 +49,22 @@ public class LaLigaRepository {
         }
         return sb.toString();
     }
+
+    public String getLaligaStandings() throws IOException {
+        URL url = null;
+        url = new URL("https://api.football-data.org/v4/competitions/PD/standings");
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestProperty("X-Auth-Token","f70da37828874c54b788f08c477bee4c");
+        con.setRequestMethod("GET");
+        InputStream in = con.getInputStream();
+        StringBuffer sb = new StringBuffer();
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        String line = br.readLine();
+        while (line != null){
+            sb.append(line);
+            line = br.readLine();
+        }
+        return sb.toString();
+    }
+
 }

@@ -1,11 +1,11 @@
 import React from "react";
 import MatchesCom from "../components/MatchesCom";
-import { datMatches } from "../data/datMatches";
+import { data } from "../data/data";
 
 function Home() {
   return (
     <>
-      <MatchesCom Matches={datMatches} />
+      <MatchesCom Matches={data} />
     </>
   );
 }

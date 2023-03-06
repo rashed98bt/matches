@@ -1,8 +1,6 @@
 import React from "react";
-import { players } from "../data/scoores.js";
 
 function TopScorCom({ TopScore }) {
-  console.log(TopScore);
   const playersTable = TopScore.scorers;
 
   let counter = 1;

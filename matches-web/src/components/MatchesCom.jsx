@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 
 function MatchesCom({ Matches }) {
-  var [competition, setCompetition] = useState({});
-  var [matches, setMatches] = useState([]);
+  const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(false);
   async function fetchData() {
     try {
       const response = Matches;
-      setCompetition(response.competition);
       setMatches(response.matches);
       setLoading(true);
     } catch (error) {
@@ -77,7 +75,6 @@ function MatchesCom({ Matches }) {
       ) : (
         <div>No Data </div>
       )}
-      <img src={competition.emblem} alt="asdasd" className="h-[100px]" />
     </>
   );
 }

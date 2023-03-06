@@ -22,9 +22,19 @@ public class LaligaController {
 
     }
     @PostMapping("/topscooreleague")
-    public String gettopscooreleague(@RequestHeader String auth)throws IOException {
+    public String getTopscooreleague(@RequestHeader String auth)throws IOException {
         if(auth.equals("rashed")){
             return this.matcesrepository.getTopScore();
+        }else {
+            return "404";
+        }
+
+    }
+
+    @PostMapping("/standings")
+    public String getLaligaStandings(@RequestHeader String auth)throws IOException {
+        if(auth.equals("rashed")){
+            return this.matcesrepository.getLaligaStandings();
         }else {
             return "404";
         }
