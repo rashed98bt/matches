@@ -5,14 +5,14 @@ import MatchesCom from "../components/MatchesCom";
 import { Triangle } from "react-loader-spinner";
 
 function LaLiga() {
-  const [data, setData] = useState([]);
+  const [matches, setMatches] = useState([]);
   const [standings, setStandings] = useState([]);
   const [topScore, setTopScore] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadingStandings, setLoadingStandings] = useState(false);
   const [LoadingTopScore, setLoadingTopScore] = useState(false);
 
-  async function fetchData() {
+  async function fetchMatches() {
     try {
       const response = await fetch(
         "http://localhost:8080/laLigaAPI/matchbyday",
@@ -25,7 +25,7 @@ function LaLiga() {
       );
       const json = await response.json();
 
-      setData(json);
+      setMatches(json);
       setLoading(true);
     } catch (error) {
       console.log(error);
@@ -68,7 +68,7 @@ function LaLiga() {
   useEffect(() => {
     fetchStandings();
     fetchTopSocer();
-    fetchData();
+    fetchMatches();
   }, []);
 
   return (
@@ -76,15 +76,15 @@ function LaLiga() {
       {loading && loadingStandings && LoadingTopScore ? (
         <>
           <img
-            src={data.competition.emblem}
+            src={matches.competition.emblem}
             alt="asdasd"
-            className="h-[100px]"
+            className="h-[150px]"
           />
-          <div className="flex justify-between ">
+          <div className="flex justify-between flex-col lg:flex-row">
             <StandingsCom LeagStandings={standings} />
             <TopScorCom TopScore={topScore} />
           </div>
-          <MatchesCom Matches={data} />
+          <MatchesCom Matches={matches} />
         </>
       ) : (
         <div className="fixed flex justify-center items-center top-0 left-0 -50% h-screen w-screen">

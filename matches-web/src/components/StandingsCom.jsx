@@ -3,9 +3,7 @@ function StandingsCom({ LeagStandings }) {
   const standing = LeagStandings;
   const tableTeam = standing.standings[0].table;
   return (
-    <div className=" w-[60%]">
-      <h5>{standing.competition.name}</h5>
-      <h5>{standing.season.currentMatchday}</h5>
+    <div className=" lg:w-[60%] w-[100%]">
       <div>
         <div
           className=" flex  rounded-lg py-1 text-white font-medium"

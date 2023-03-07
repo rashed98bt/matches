@@ -5,9 +5,7 @@ function TopScorCom({ TopScore }) {
 
   let counter = 1;
   return (
-    <div className=" w-[35%] ">
-      <h5>Top scoores</h5>
-      <h5>asdasd</h5>
+    <div className="lg:w-[35%] w-[100%]">
       <div>
         <div
           className="  flex rounded-lg py-1 text-white font-medium text-center"
