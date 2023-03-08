@@ -5,6 +5,9 @@ import Header from "./components/Header";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import LaLiga from "./pages/LaLiga";
+import Bundesliga from "./pages/Bundesliga";
+import SeriaA from "./pages/SeriaA";
+import LeagOne from "./pages/LeagOne";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/premerLeag" element={<PremerLeag />} />
             <Route path="/Laliga" element={<LaLiga />} />
+            <Route path="/Bundesliga" element={<Bundesliga />} />
+            <Route path="/Seria_A" element={<SeriaA />} />
+            <Route path="/Ligue_1" element={<LeagOne />} />
           </Routes>
         </div>
       </div>

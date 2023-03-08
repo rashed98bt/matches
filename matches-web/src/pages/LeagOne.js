@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Triangle } from "react-loader-spinner";
+import MatchesCom from "../components/MatchesCom";
 import StandingsCom from "../components/StandingsCom";
 import TopScorCom from "../components/TopScorCom";
-import MatchesCom from "../components/MatchesCom";
-import { Triangle } from "react-loader-spinner";
 
-function LaLiga() {
+function LeagOne() {
   const [matches, setMatches] = useState([]);
   const [standings, setStandings] = useState([]);
   const [topScore, setTopScore] = useState([]);
@@ -19,7 +19,7 @@ function LaLiga() {
         {
           headers: { "Content-Type": "application/json", auth: "rashed" },
           mode: "cors",
-          body: "PD",
+          body: "FL1",
           method: "POST",
         }
       );
@@ -37,7 +37,7 @@ function LaLiga() {
         "http://localhost:8080/apiController/leagetopscore",
         {
           headers: { "Content-Type": "application/json", auth: "rashed" },
-          body: "PD",
+          body: "FL1",
           mode: "cors",
           method: "POST",
         }
@@ -56,7 +56,7 @@ function LaLiga() {
         {
           headers: { "Content-Type": "application/json", auth: "rashed" },
           mode: "cors",
-          body: "PD",
+          body: "FL1",
           method: "POST",
         }
       );
@@ -105,4 +105,4 @@ function LaLiga() {
   );
 }
 
-export default LaLiga;
+export default LeagOne;

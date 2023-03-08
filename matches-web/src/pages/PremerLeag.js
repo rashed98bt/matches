@@ -14,11 +14,11 @@ function PremerLeag() {
   async function fetchMatches() {
     try {
       const response = await fetch(
-        "http://localhost:8080/laLigaAPI/matchbyday",
+        "http://localhost:8080/apiController/leageweekmatches",
         {
           headers: { "Content-Type": "application/json", auth: "rashed" },
           mode: "cors",
-          body: "25",
+          body: "PL",
           method: "POST",
         }
       );
@@ -33,10 +33,11 @@ function PremerLeag() {
   async function fetchTopSocer() {
     try {
       const response = await fetch(
-        "http://localhost:8080/laLigaAPI/topscooreleague",
+        "http://localhost:8080/apiController/leagetopscore",
         {
           headers: { "Content-Type": "application/json", auth: "rashed" },
           mode: "cors",
+          body: "PL",
           method: "POST",
         }
       );
@@ -50,10 +51,11 @@ function PremerLeag() {
   async function fetchStandings() {
     try {
       const response = await fetch(
-        "http://localhost:8080/laLigaAPI/standings",
+        "http://localhost:8080/apiController/leagestandings",
         {
           headers: { "Content-Type": "application/json", auth: "rashed" },
           mode: "cors",
+          body: "PL",
           method: "POST",
         }
       );

@@ -15,16 +15,36 @@ public class PremierLeagueController {
     @PostMapping("/matchbyday")
     public String getPremierLeagueMatchesByRound(@RequestBody String day,@RequestBody String leageName,@RequestHeader String auth)throws IOException {
             if(auth.equals("rashed")){
-                return this.matcesrepository.getPremierLeagueMatchesByRound(day,leageName);
+                return this.matcesrepository.getLeageMatchesByRound(day,leageName);
             }else {
                 return "404";
             }
 
     }
-    @PostMapping("/weekmatches")
-    public String getWeekMatches(@RequestBody String leageName,@RequestHeader String auth)throws IOException {
+    @PostMapping("/leageweekmatches")
+    public String getLeageWeekMatches(@RequestBody String leageName,@RequestHeader String auth)throws IOException {
         if(auth.equals("rashed")){
-            return this.matcesrepository.getWeekMatches(leageName);
+            return this.matcesrepository.getLeageWeekMatches(leageName);
+        }else {
+            return "404";
+        }
+
+    }
+
+    @PostMapping("/leagetopscore")
+    public String getLeageTopScore(@RequestBody String leageName,@RequestHeader String auth)throws IOException {
+        if(auth.equals("rashed")){
+            return this.matcesrepository.getLeageTopScore(leageName);
+        }else {
+            return "404";
+        }
+
+    }
+
+    @PostMapping("/leagestandings")
+    public String getLeageStandings(@RequestBody String leageName,@RequestHeader String auth)throws IOException {
+        if(auth.equals("rashed")){
+            return this.matcesrepository.getLeageStandings(leageName);
         }else {
             return "404";
         }
