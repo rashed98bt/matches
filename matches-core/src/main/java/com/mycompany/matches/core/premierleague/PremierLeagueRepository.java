@@ -1,6 +1,7 @@
 package com.mycompany.matches.core.premierleague;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,20 +11,21 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.LocalDate;
 
+@Service
 public class PremierLeagueRepository {
 
-//    @Value("${api.url}")
-//    private String apiUrl;
-//    @Value("${api.token}")
-//    private String token ;
-
-    private String apiUrl ;
+    @Value("${api.url}")
+    private String apiUrl;
+    @Value("${api.token}")
     private String token ;
 
-    public PremierLeagueRepository()  {
-        apiUrl = "https://api.football-data.org/v4/competitions/";
-        token  = "f70da37828874c54b788f08c477bee4c";
-    }
+//    private String apiUrl ;
+//    private String token ;
+//
+//    public PremierLeagueRepository()  {
+//        apiUrl = "https://api.football-data.org/v4/competitions/";
+//        token  = "f70da37828874c54b788f08c477bee4c";
+//    }
 
 
 
@@ -66,6 +68,7 @@ public class PremierLeagueRepository {
     public String getLeageTopScore(String leageName) throws IOException {
         URL url = null;
         url = new URL(this.apiUrl+leageName+"/scorers");
+        URL na = url;
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestProperty("X-Auth-Token","f70da37828874c54b788f08c477bee4c");
         con.setRequestMethod("GET");
