@@ -75,7 +75,7 @@ function PremerLeag() {
     <>
       {loading && loadingStandings && LoadingTopScore ? (
         <>
-          <div className="flex justify-between">
+          <div className="row">
             <StandingsCom LeagStandings={standings} />
             <TopScorCom TopScore={topScore} />
           </div>

@@ -2,66 +2,54 @@ import React from "react";
 function StandingsCom({ LeagStandings }) {
   const standing = LeagStandings;
   const tableTeam = standing.standings[0].table;
+  console.log(tableTeam);
   return (
-    <div className=" lg:w-[60%] w-[100%]">
-      <div>
-        <div
-          className=" flex  rounded-lg py-1 text-white font-medium"
-          style={{ backgroundColor: "#340040" }}
-        >
-          <span className="p-2 mr-2 w-[5%]"></span>
-          <span className="mr-1 w-[20px]"></span>
-          <span className="w-[20%] text-left">Club</span>
-          <span className="w-[7.5%] text-center">MP</span>
-          <span className="w-[5%] text-center">W</span>
-          <span className="w-[5%] text-center">D</span>
-          <span className="w-[5%] text-center">L</span>
-          <span className="w-[7.5%] text-center">GF</span>
-          <span className="w-[7.5%] text-center">GA</span>
-          <span className="w-[7.5%] text-center">GD</span>
-          <span className="w-[7.5%] text-center">PTs</span>
-          <span className="w-[25%] text-center">Last 5</span>
-        </div>
-
-        {tableTeam.map((team) => (
-          <div
-            key={team.position}
-            className="flex  pl-0 rounded-lg my-1  border-none items-center"
-          >
-            <span
-              className="rounded-l-lg p-1 mr-2 w-[5%] text-center"
-              style={
-                team.position < 5
-                  ? { backgroundColor: "#22c55e" }
-                  : {
-                      backgroundColor: "transparent ",
-                    } && team.position > 17
-                  ? { backgroundColor: "#ef4444" }
-                  : {
-                      backgroundColor: "transparent",
-                    }
-              }
+    <div className="overflow-x-auto col-7">
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">Club</th>
+            <th scope="col">MP</th>
+            <th scope="col">W</th>
+            <th scope="col">D</th>
+            <th scope="col">L</th>
+            <th scope="col">GF</th>
+            <th scope="col">GA</th>
+            <th scope="col">GD</th>
+            <th scope="col"> PTs </th>
+            <th scope="col">Last 5 </th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          {tableTeam.map((team) => (
+            <tr
+              key={team.position}
+              className={team.position < 5 && team.position ? "bg-success" : ""}
             >
-              {team.position}
-            </span>
-            <img
-              src={team.team.crest}
-              alt=""
-              className="h-[20px] w-[20px] mr-1"
-            />
-            <span className="w-[20%] text-left">{team.team.shortName}</span>
-            <span className="w-[7.5%] text-center">{team.playedGames}</span>
-            <span className="w-[5%] text-center">{team.won}</span>
-            <span className="w-[5%] text-center">{team.draw}</span>
-            <span className="w-[5%] text-center">{team.lost}</span>
-            <span className="w-[7.5%] text-center">{team.goalsFor}</span>
-            <span className="w-[7.5%] text-center">{team.goalsAgainst}</span>
-            <span className="w-[7.5%] text-center">{team.goalDifference}</span>
-            <span className="w-[7.5%] text-center">{team.points}</span>
-            <span className="w-[25%] text-center">{team.form}</span>
-          </div>
-        ))}
-      </div>
+              <th scope="col">{team.position}</th>
+              <td>
+                <img
+                  src={team.team.crest}
+                  alt="..."
+                  style={{ width: "30px", height: "30px" }}
+                />
+              </td>
+              <td>{team.team.shortName}</td>
+              <td>{team.playedGames}</td>
+              <td>{team.won}</td>
+              <td>{team.draw}</td>
+              <td>{team.lost}</td>
+              <td>{team.goalsFor}</td>
+              <td>{team.goalsAgainst}</td>
+              <td>{team.goalDifference}</td>
+              <td>{team.points}</td>
+              <td>{team.form.split(",")}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

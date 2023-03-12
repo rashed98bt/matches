@@ -82,7 +82,7 @@ function LeagOne() {
             alt="asdasd"
             className="h-[150px]"
           />
-          <div className="flex justify-between flex-col lg:flex-row">
+          <div className="row">
             <StandingsCom LeagStandings={standings} />
             <TopScorCom TopScore={topScore} />
           </div>

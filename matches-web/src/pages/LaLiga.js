@@ -82,14 +82,14 @@ function LaLiga() {
             alt="asdasd"
             className="h-[150px]"
           />
-          <div className="flex justify-between flex-col lg:flex-row">
+          <div className="row">
             <StandingsCom LeagStandings={standings} />
             <TopScorCom TopScore={topScore} />
           </div>
           <MatchesCom Matches={matches} />
         </>
       ) : (
-        <div className="fixed flex justify-center items-center top-0 left-0 -50% h-screen w-screen">
+        <div className="">
           <Triangle
             height="80"
             width="80"

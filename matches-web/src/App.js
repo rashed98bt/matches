@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div>
+      <div className="p-sm-0 px-2 container">
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/premerLeag" element={<PremerLeag />} />

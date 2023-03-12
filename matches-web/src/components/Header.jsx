@@ -3,39 +3,38 @@ import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <div className="bg-light sticky-top p-1-lg">
-      <nav class="navbar container-fluid  navbar-expand-lg">
+    <div className=" sticky-top p-sm-0 px-2 bg-light-subtle">
+      <nav className="navbar container  navbar-expand-md ">
         <Link to="/" className="nav-link">
           Home
         </Link>
         <button
-          class="navbar-toggler"
-          type="button"
+          className="navbar-toggler"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar"
           aria-controls="offcanvasNavbar"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          class="offcanvas offcanvas-end"
-          tabindex="-1"
+          className="offcanvas offcanvas-end"
+          tabIndex="-1"
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
         >
-          <div class="offcanvas-header">
+          <div className="offcanvas-header">
             <Link to="/" className="nav-link">
               Home
             </Link>
             <button
               type="button"
-              class="btn-close"
+              className="btn-close"
               data-bs-dismiss="offcanvas"
               aria-label="Close"
             ></button>
           </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <div className="offcanvas-body">
+            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <Link to="/premerLeag" className="nav-item  nav-link active">
                 PremerLeag
               </Link>
