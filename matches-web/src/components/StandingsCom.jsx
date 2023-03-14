@@ -24,11 +24,19 @@ function StandingsCom({ LeagStandings }) {
         </thead>
         <tbody class="table-group-divider">
           {tableTeam.map((team) => (
-            <tr
-              key={team.position}
-              className={team.position < 5 && team.position ? "bg-success" : ""}
-            >
-              <th scope="col">{team.position}</th>
+            <tr key={team.position}>
+              <th
+                scope="col"
+                className={`${
+                  team.position < 5 && team.position
+                    ? "bg-success"
+                    : "" || (team.position > 17 && team.position)
+                    ? "bg-danger"
+                    : ""
+                } text-center`}
+              >
+                {team.position}
+              </th>
               <td>
                 <img
                   src={team.team.crest}
@@ -45,7 +53,26 @@ function StandingsCom({ LeagStandings }) {
               <td>{team.goalsAgainst}</td>
               <td>{team.goalDifference}</td>
               <td>{team.points}</td>
-              <td>{team.form.split(",")}</td>
+              <td>
+                {team.form.split(",").map((m) => (
+                  <td
+                    style={{
+                      height: "25px",
+                      width: "25px",
+                      marginRight: "3px",
+                    }}
+                    className={`${
+                      m.valueOf() === "W"
+                        ? "bg-success"
+                        : "bg-white" && m.valueOf() === "L"
+                        ? "bg-danger"
+                        : "bg-secondary"
+                    } rounded-circle p-1 text-center`}
+                  >
+                    {m.valueOf()}
+                  </td>
+                ))}
+              </td>
             </tr>
           ))}
         </tbody>

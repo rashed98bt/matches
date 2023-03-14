@@ -56,6 +56,7 @@ function MatchesCom({ Matches }) {
               src={match.homeTeam.crest}
               alt="asdads"
               className="col-1 rounded"
+              style={{ width: "65px", height: "65px" }}
             />
             <div className="col-3 ">
               <div className="text-center">
@@ -63,25 +64,25 @@ function MatchesCom({ Matches }) {
                 <p className="font-light">{match.homeTeam.shortName}</p>
               </div>
             </div>
-            <div className="col-4">
-              <div className="text-3xl font-bold">
+            <div className="col-4 row align-items-center">
+              <div className="text-3xl font-bold col-2">
                 {match.score.fullTime.home}
               </div>
-              <div className="text-xs font-light text-center">
+              <div className="text-xs font-light text-center col-8">
                 <div>Round {match.matchday}</div>
                 <div>{match.utcDate.slice(0, 10)}</div>
                 <div>{match.referees.name}</div>
-                {match.score.fullTime.home > match.score.fullTime.away && (
-                  <div>Winner is {match.homeTeam.shortName}</div>
-                )}
-                {match.score.fullTime.home < match.score.fullTime.away && (
-                  <div>Winner is {match.awayTeam.shortName} </div>
-                )}
-                {match.score.fullTime.home === match.score.fullTime.away && (
-                  <div>Draw </div>
-                )}
+
+                {match.status === "FINISHED"
+                  ? (match.score.fullTime.home > match.score.fullTime.away && (
+                      <div>Winner is {match.homeTeam.shortName}</div>
+                    )) ||
+                    (match.score.fullTime.home < match.score.fullTime.away && (
+                      <div>Winner is {match.awayTeam.shortName} </div>
+                    )) || <div>Draw </div>
+                  : "Not Played Yet"}
               </div>
-              <div className="text-3xl font-bold">
+              <div className="text-3xl font-bold col-2">
                 {match.score.fullTime.away}
               </div>
             </div>
@@ -95,6 +96,7 @@ function MatchesCom({ Matches }) {
               src={match.awayTeam.crest}
               alt="asdads"
               className="col-1 rounded"
+              style={{ width: "65px", height: "65px" }}
             />
           </div>
         </div>
